@@ -1,0 +1,25 @@
+﻿1.4
+The algorithm is similar to the basic Gale Shapley algorithm. The algorithm is following:
+
+
+While some hospital h has available positions do
+	s ← first students on h’s list to whom h has not given the offer.
+	If s is not assigned then
+		s is assigned to h.
+		the number of the available positions of h decrease by one.
+	else if s prefers h to her current assigned hospital h’ then
+		s is assigned to h.
+		remove the relationship between the s and the h.
+		the number of the available positions of h decrease by one.
+		the number of the available positions of h’ increase by one.
+		
+	else
+		s rejects h.
+	end if
+end while
+
+Because the algorithm terminates when the hospitals’ positions are all filled. One student can be  assigned to just one hospital and the number of the available positions is larger than the number of students, so the hospital’s positions will get one student.
+Then we will argue the assignment is stable. For the first kind of instability, because h prefers s’  to s, so h will give the offer to s’  earlier than s. If s’ is assigned to no hospital, then s’ will accept the offer. So this condition doesn’t exit. For the second kind of instability, h prefers s’ to s , so h will give s’ the offer earlier than s, if s’ is assigned to h’ now, s’ will refuse the h’ and accept h now, because s’ prefers h to h’ and s’ won’t be assigned to h’ again.
+
+1.5
+
